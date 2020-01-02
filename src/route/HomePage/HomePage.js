@@ -7,8 +7,7 @@ import './HomePage.scss';
 class HomePage extends React.Component {
 
   componentDidMount() {
-    const { history } = this.props;
-    console.log('history', history);
+    // const { history } = this.props;
   }
 
   render() {
@@ -21,9 +20,7 @@ class HomePage extends React.Component {
         </p>
         <a
           className="App-link"
-          // href="https://reactjs.org"
-          href="#/login"
-          // target="_blank"
+          href="/login"
           rel="noopener noreferrer"
         >
           Learn React
