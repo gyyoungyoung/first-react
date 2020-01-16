@@ -1,22 +1,66 @@
 .HomePage {
   text-align: center;
 
-  .App-logo {
-    height: 40vmin;
-  }
-  
   .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
+    // background-color: #282c34;
+    height: 80px;
     display: flex;
-    flex-direction: column;
+    padding: 0 200px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     font-size: calc(10px + 2vmin);
     color: white;
+    .App-logo {
+      height: 40px;
+    }
+    .App-link {
+      color: #09d3ac;
+    }
   }
 
-  .App-link {
-    color: #09d3ac;
+  .content {
+    width: 100%;
+    .banner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url('../../assets/images/banner.jpg');
+      background-position: center;
+      height: 620px;
+      font-size: 30px;
+      color: #fff;
+      line-height: 1.5;
+    }
+    .story-list {
+      margin: 30px auto 0;
+      width: 1000px;
+      .story-item {
+        display: flex;
+        justify-content: space-between;
+        height: 350px;
+        .picture {
+          height: 100%;
+          width: 400px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        .story-text {
+          display: flex;
+          align-items: center;
+          width: calc(100% - 400px);
+          padding-left: 100px;
+          white-space: pre;
+          text-align: left;
+          line-height: 2;
+        }
+      }
+    }
+  }
+
+  footer {
+    height: 180px;
+    background-color: #282c34;
+
   }
 }
