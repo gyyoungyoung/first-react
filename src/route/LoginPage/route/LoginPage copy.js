@@ -9,10 +9,27 @@ import './LoginPage.scss';
 
 class LoginPage extends React.Component {
 
+  searchOptions = {
+    limit: 10,
+    page: 1,
+    q: "魔法少女"
+  };
+
   jump = () => {
     const { history } = this.props;
     console.log('history', history);
     history.replace('/login/aa')
+  }
+
+  async fetchData() {
+    let url = new URL("https://api.jikan.moe/v3/search/anime");
+    for (let key in this.searchOptions) {
+      url.searchParams.set(key, this.searchOptions[key]);
+    }
+    let response = await fetch(url.href);
+    let data = await response.json();
+    console.log('data', data);
+    return data;
   }
 
   componentDidMount() {
@@ -21,6 +38,7 @@ class LoginPage extends React.Component {
     .then(res => {
       console.log('res', res);
     })
+    this.fetchData();
   }
 
   render() {
